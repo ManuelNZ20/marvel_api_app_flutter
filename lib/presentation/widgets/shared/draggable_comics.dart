@@ -116,7 +116,7 @@ class _ContainerDraggable extends StatelessWidget {
                                 ? 'Sin Descripción'
                                 : widget.comics.description,
                             overflow: TextOverflow.clip,
-                            style: TextStyleDetailComics().textStyleDetails(Colors.black),
+                            style: TextStyleDetailComics().textStyleDetails(Colors.black,16),
                           ),
                         ),
                         Spacer(),
@@ -129,7 +129,7 @@ class _ContainerDraggable extends StatelessWidget {
                                 backgroundColor: MaterialStatePropertyAll(Colors.red),
                                 foregroundColor: MaterialStatePropertyAll(Colors.white)
                               ),
-                              onPressed: (){}, icon: Icon(Icons.monetization_on_outlined), label: Text('Adquirir'))
+                              onPressed: (){}, icon: Icon(Icons.monetization_on_outlined), label: Text('Adquirir',style: TextStyleDetailComics().textStyleDetails(Colors.white,14),))
                           ],
                         )
                       ],
