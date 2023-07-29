@@ -1,7 +1,8 @@
-import 'package:app_comics_marvel1/config/helper/app_text_style.dart';
 import 'package:app_comics_marvel1/domain/entities/comics.dart';
 import 'package:app_comics_marvel1/presentation/widgets/shared/buttons_appbar.dart';
+import 'package:app_comics_marvel1/presentation/widgets/shared/card_details_comics.dart';
 import 'package:flutter/material.dart';
+
 
 class DraggableComicsSheet extends StatefulWidget {
   final Comics comics;
@@ -79,64 +80,7 @@ class _ContainerDraggable extends StatelessWidget {
                     color: Colors.grey,
                     borderRadius: BorderRadius.circular(50)),
               ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width: size.width * .45,
-                    height: size.height * .3,
-                    child: Card(
-                      elevation: 5,
-                      clipBehavior: Clip.hardEdge,
-                      child: Image.network(
-                        '${widget.comics.thumbnail.path}.${widget.comics.thumbnail.extensionThumbnail}',
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: size.width * .45,
-                    height: size.height * .3,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Center(child: Text(widget.comics.title,
-                        overflow: TextOverflow.ellipsis,)),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.grey[100]
-                          ),
-                          padding: EdgeInsets.all(10),
-                          height: size.height * .2,
-                          width: size.width*1,
-                          child: Text(
-                            widget.comics.description == '#N/A'||widget.comics.description.isEmpty
-                                ? 'Sin Descripción'
-                                : widget.comics.description,
-                            overflow: TextOverflow.clip,
-                            style: TextStyleDetailComics().textStyleDetails(Colors.black,16),
-                          ),
-                        ),
-                        Spacer(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('\$ ${widget.comics.prices[0].price}'),
-                            ElevatedButton.icon(
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStatePropertyAll(Colors.red),
-                                foregroundColor: MaterialStatePropertyAll(Colors.white)
-                              ),
-                              onPressed: (){}, icon: Icon(Icons.monetization_on_outlined), label: Text('Adquirir',style: TextStyleDetailComics().textStyleDetails(Colors.white,14),))
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
+              CardDetailsComics(comics: widget.comics),
             ],
           ),
         ));

@@ -12,11 +12,13 @@ class ButtonsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+        color: Colors.white,
         onPressed: onPressed,
         icon: Icon(
           iconData,
           color: color,
           size: 30,
+          
         ));
   }
 }

@@ -4,7 +4,10 @@ import 'buttons_appbar.dart';
 class AppBarComicsHome extends StatelessWidget {
   const AppBarComicsHome({
     super.key,
+    required this.globalKey
   });
+  final GlobalKey<ScaffoldState> globalKey;
+
 
 
   @override
@@ -19,7 +22,11 @@ class AppBarComicsHome extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            ButtonsAppBar(iconData: Icons.menu, onPressed: (){}),
+            ButtonsAppBar(iconData: Icons.menu, onPressed: (){
+              if(!globalKey.currentState!.isDrawerOpen) {
+                globalKey.currentState!.openDrawer();
+              }
+            }),
             Image.asset('assets/images/logoMarvel.png',
             height: size.height*.05,
             ),
