@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final comicsRepository = ComicsRepositoriesImpl(comicsDataSource: ComicsDataSources());
+    final comicsRepository = ComicsRepositoriesImpl(comicsDataSource: ApiComicsDataSources());
 
     return MultiProvider(
       providers: [

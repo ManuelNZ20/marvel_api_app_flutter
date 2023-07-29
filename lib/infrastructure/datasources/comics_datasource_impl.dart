@@ -4,7 +4,7 @@ import 'package:app_comics_marvel1/infrastructure/models/comics_model.dart';
 
 import '../../config/helper/marvel_api.dart';
 
-class ComicsDataSources extends ComicsDataSource {
+class ApiComicsDataSources extends ComicsDataSource {
   @override
   Future<List<Comics>> getFavoriteComicsByUserId(String userID) {
     // TODO: implement getFavoriteComicsByUserId

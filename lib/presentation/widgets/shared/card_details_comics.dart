@@ -1,9 +1,9 @@
 import 'package:app_comics_marvel1/presentation/widgets/shared/buttons_comics.dart';
 import 'package:app_comics_marvel1/presentation/widgets/shared/card_image_comics.dart';
 import 'package:flutter/material.dart';
-
 import '../../../config/helper/app_text_style.dart';
 import '../../../domain/entities/comics.dart';
+
 class CardDetailsComics extends StatelessWidget {
   const CardDetailsComics({
     super.key,

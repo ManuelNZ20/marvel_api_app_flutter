@@ -13,8 +13,8 @@ class ComicsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final comicsProvider = Provider.of<ComicsProvider>(context);
     return comicsProvider.initialLoadingImage
-        ? Center(
-          child: const CircularProgressIndicator(
+        ? const Center(
+          child:CircularProgressIndicator(
             color: Colors.white,
           ),
         )

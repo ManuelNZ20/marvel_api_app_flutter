@@ -8,6 +8,7 @@ class HomeScreenComic extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     final globalKey = GlobalKey<ScaffoldState>(
       debugLabel: 'home_comic'
     );
